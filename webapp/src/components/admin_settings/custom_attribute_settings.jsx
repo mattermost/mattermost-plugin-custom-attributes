@@ -108,7 +108,7 @@ export default class CustomAttributesSettings extends React.Component {
             Name: name,
             UserIDs: userIds,
             TeamIDs: teamIds,
-            GroupIDs: groups ? groups.split(' ') : '',
+            GroupIDs: groups ? groups.split(' ') : [],
         });
 
         this.props.onChange(this.props.id, Array.from(this.state.attributes.values()));
