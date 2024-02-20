@@ -10,10 +10,11 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "plugins": [
     "react",
-    "import"
+    "import",
+    "@typescript-eslint"
   ],
   "env": {
     "browser": true,
@@ -374,7 +375,7 @@
       2,
       {
         "vars": "all",
-        "args": "after-used"
+        "args": "none"
       }
     ],
     "no-use-before-define": [

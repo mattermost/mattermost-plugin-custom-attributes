@@ -4,3 +4,5 @@ webapp/dist
 .DS_Store
 node_modules
 .vscode
+webapp/src/manifest.ts
+server/manifest.go

@@ -21,7 +21,7 @@ export default class TeamsInput extends React.PureComponent {
         if (this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
     getOptionValue = (team) => {
         if (team.id) {
@@ -41,7 +41,7 @@ export default class TeamsInput extends React.PureComponent {
         }
 
         return option;
-    }
+    };
 
     searchTeams = debounce((term, callback) => {
         this.props.actions.searchTeams(term).then(({data, error}) => {

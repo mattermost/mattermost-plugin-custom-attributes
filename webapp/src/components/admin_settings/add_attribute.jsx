@@ -13,7 +13,7 @@ export default class AddAttribute extends React.Component {
         teams: PropTypes.array,
         groups: PropTypes.array,
         onChange: PropTypes.func.isRequired,
-    }
+    };
 
     constructor(props) {
         super(props);
@@ -37,11 +37,11 @@ export default class AddAttribute extends React.Component {
             groups: null,
             error: false,
         });
-    }
+    };
 
     onInput = ({name, users, teams, groups}) => {
         this.setState({name, users, teams, groups, error: false});
-    }
+    };
 
     handleSave = () => {
         const usersEmpty = !this.state.users || !this.state.users.length;
@@ -61,7 +61,7 @@ export default class AddAttribute extends React.Component {
             teams: null,
             groups: null,
         });
-    }
+    };
 
     render() {
         if (this.state.collapsed) {

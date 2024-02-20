@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {id as pluginId} from '../../manifest';
+import manifest from '../../manifest';
 
 const {formatText, messageHtmlToComponent} = window.PostUtils;
 
@@ -36,7 +36,7 @@ export default class UserAttribute extends React.PureComponent {
                     const formattedText = formatText(attribute);
                     return (
                         <div
-                            key={pluginId + '__' + attribute}
+                            key={manifest.id + '__' + attribute}
                             style={style.row}
                         >
                             {messageHtmlToComponent(formattedText)}

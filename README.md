@@ -97,10 +97,13 @@ Below is an example:
 
 ## Development
 
-This plugin contains both a server and webapp portion.
+This plugin contains both a server and web app portion. Read our documentation about the [Developer Workflow](https://developers.mattermost.com/integrate/plugins/developer-workflow/) and [Developer Setup](https://developers.mattermost.com/integrate/plugins/developer-setup/) for more information about developing and extending plugins.
 
-Use `make dist` to build distributions of the plugin that you can upload to a Mattermost server.
-Use `make check-style` to check the style.
-Use `make deploy` to deploy the plugin to your local server.
+### Releasing new versions
 
-For additional information on developing plugins, refer to [our plugin developer documentation](https://developers.mattermost.com/extend/plugins/).
+The version of a plugin is determined at compile time, automatically populating a `version` field in the [plugin manifest](plugin.json):
+* If the current commit matches a tag, the version will match after stripping any leading `v`, e.g. `1.3.1`.
+* Otherwise, the version will combine the nearest tag with `git rev-parse --short HEAD`, e.g. `1.3.1+d06e53e1`.
+* If there is no version tag, an empty version will be combined with the short hash, e.g. `0.0.0+76081421`.
+
+To disable this behaviour, manually populate and maintain the `version` field.

@@ -1,11 +1,11 @@
 import {Client4} from 'mattermost-redux/client';
 import {ClientError} from 'mattermost-redux/client/client4';
 
-import {id as pluginId} from '../manifest';
+import manifest from '../manifest';
 
 export default class Client {
     constructor() {
-        this.url = `/plugins/${pluginId}/api/v1`;
+        this.url = `/plugins/${manifest.id}/api/v1`;
     }
 
     getAttributes = async (userID = '') => {

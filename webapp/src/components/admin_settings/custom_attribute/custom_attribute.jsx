@@ -22,7 +22,7 @@ export default class CustomAttribute extends React.Component {
             getTeam: PropTypes.func.isRequired,
             getCustomEmojisInText: PropTypes.func.isRequired,
         }).isRequired,
-    }
+    };
 
     constructor(props) {
         super(props);
@@ -52,7 +52,7 @@ export default class CustomAttribute extends React.Component {
             // mattermost-redux removes the current admin user from the result at:
             // https://github.com/mattermost/mattermost-redux/blob/5f5a8a5007661f6d54533c2b51299748338b5a65/src/actions/users.ts#L340
             const unknownIds = this.props.users.filter((userId) =>
-                !users.find((user) => user.id === userId)
+                !users.find((user) => user.id === userId),
             );
 
             // Add the unknown ids directly to display on the input
@@ -84,7 +84,7 @@ export default class CustomAttribute extends React.Component {
 
         this.setState({name: e.target.value});
         this.props.onChange({id: this.props.id, name: e.target.value, users: this.state.users, teams: this.state.teams, groups: this.state.groups});
-    }
+    };
 
     handleUsersInput = (userIds) => {
         const usersEmpty = !userIds || !userIds.length;
@@ -99,7 +99,7 @@ export default class CustomAttribute extends React.Component {
 
         this.setState({users: userIds});
         this.props.onChange({id: this.props.id, name: this.state.name, users: userIds, teams: this.state.teams, groups: this.state.groups});
-    }
+    };
 
     handleTeamsInput = (teamsIds) => {
         const usersEmpty = !this.state.users || !this.state.users.length;
@@ -114,7 +114,7 @@ export default class CustomAttribute extends React.Component {
 
         this.setState({teams: teamsIds});
         this.props.onChange({id: this.props.id, name: this.state.name, users: this.state.users, teams: teamsIds, groups: this.state.groups});
-    }
+    };
 
     handleGroupsInput = (e) => {
         const usersEmpty = !this.state.users || !this.state.users.length;
@@ -129,11 +129,11 @@ export default class CustomAttribute extends React.Component {
 
         this.setState({groups: e.target.value});
         this.props.onChange({id: this.props.id, name: this.state.name, users: this.state.users, teams: this.state.teams, groups: e.target.value});
-    }
+    };
 
     handleDelete = () => {
         this.props.onDelete(this.props.id);
-    }
+    };
 
     getMarkdownPreview = () => {
         if (!this.props.markdownPreview) {
@@ -144,7 +144,7 @@ export default class CustomAttribute extends React.Component {
 
         const formattedText = formatText(this.state.name);
         return messageHtmlToComponent(formattedText);
-    }
+    };
 
     render() {
         let deleteButton = null;

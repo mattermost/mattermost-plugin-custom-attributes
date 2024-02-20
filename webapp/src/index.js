@@ -1,4 +1,4 @@
-import {id as pluginId} from './manifest';
+import manifest from './manifest';
 
 import UserAttribute from './components/user_attribute';
 import CustomAttributesSettings from './components/admin_settings/custom_attribute_settings.jsx';
@@ -13,4 +13,4 @@ export default class Plugin {
     }
 }
 
-window.registerPlugin(pluginId, new Plugin());
+window.registerPlugin(manifest.id, new Plugin());

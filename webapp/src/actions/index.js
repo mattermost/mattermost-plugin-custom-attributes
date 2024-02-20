@@ -2,13 +2,13 @@ import {getCustomEmojisInText} from 'mattermost-redux/actions/emojis';
 
 import Client from '../client';
 import ActionTypes from '../action_types';
-import {id as pluginId} from '../manifest';
+import manifest from '../manifest';
 
 const ATTRIBUTES_GET_TIMEOUT_MILLISECONDS = 1000 * 60 * 60; // 1 hour
 
 export function getAttributes(userID = '') {
     return async (dispatch, getState) => {
-        const attributes = getState()[`plugins-${pluginId}`].attributes[userID];
+        const attributes = getState()[`plugins-${manifest.id}`].attributes[userID];
         if (attributes && attributes.last_try && Date.now() - attributes.last_try < ATTRIBUTES_GET_TIMEOUT_MILLISECONDS) {
             return {};
         }

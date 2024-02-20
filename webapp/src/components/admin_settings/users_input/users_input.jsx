@@ -21,7 +21,7 @@ export default class UsersInput extends React.Component {
         if (this.props.onChange) {
             this.props.onChange(value);
         }
-    }
+    };
 
     getOptionValue = (user) => {
         if (user.id) {
@@ -41,7 +41,7 @@ export default class UsersInput extends React.Component {
         }
 
         return option;
-    }
+    };
 
     debouncedSearchProfiles = debounce((term, callback) => {
         this.props.actions.searchProfiles(term).then(({data}) => {
